@@ -1,3 +1,4 @@
+require('dotenv').config();
 const convict = require("convict");
 
 const config = convict({
@@ -5,13 +6,13 @@ const config = convict({
         doc: 'The url application \"api\".',
         format: String,
         default: 'http://localhost:3000/',
-        env: 'NODE_URL'
+        env: 'APIURL'
     },
     port: {
-        doc: 'The port to bind.', // опис призначення
-        format: 'port',           // формат поля String, ipadress, port, array, url, int, timestamp, *
+        doc: 'The port to bind.',
+        format: 'port',
         default: 3001,
-        env: 'PORT',                   // назва змінної у файлі .env
+        env: 'PORT',
         arg: 'port'
     }
 });
